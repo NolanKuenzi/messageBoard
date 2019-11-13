@@ -37,6 +37,7 @@ module.exports = function (app) {
         res.status(400).json({err: errors.array()[0].msg});
         return;
       }
+      /*
       const connection = mysql.createConnection({
         host: 'localhost',
         user: 'db_admin',
@@ -53,7 +54,7 @@ module.exports = function (app) {
         }
         console.log('suupersz');
       })
-      /*
+      
       connection.query('SHOW TABLES', function (err, rows, fields) {
         if (err) {
           console.log('ERROR');
@@ -63,8 +64,8 @@ module.exports = function (app) {
         console.log('success');
        // console.log(rows);
        // console.log(fields);
-      }) */
-      connection.end()
+      })
+      connection.end() */
     })
     .put([
 

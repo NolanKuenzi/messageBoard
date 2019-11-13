@@ -12,10 +12,7 @@ const helmet = require('helmet');
 
 const app = express();
 
-app.use('/public', express.static(process.cwd() + '/public'));
-
 app.use(cors({origin: '*'})); //For FCC testing purposes only
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,6 +21,8 @@ app.use(helmet());
 app.use(helmet.frameguard({ action: 'sameorigin' }));
 app.use(helmet.dnsPrefetchControl());
 app.use(helmet.referrerPolicy({ policy: 'same-origin' }));
+
+app.use('/public', express.static(process.cwd() + '/public'));
 
 
 //Sample front-end
@@ -53,7 +52,6 @@ apiRoutes(app);
     
 //404 Not Found Middleware
 app.use(function(req, res, next) {
-  console.log('here');
   res.status(404)
     .type('text')
     .send('Not Found');
