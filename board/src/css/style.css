@@ -1,0 +1,53 @@
+/* General */
+
+body {
+
+}
+
+/* <board /> component */
+
+h2 {
+    text-align: center;
+}
+
+#boardSection {
+    margin-top: 3em;
+    width: 25em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+#boardSecHeader {
+    font-size: 1.2em;
+}
+
+#submitTxtArea {
+    outline: none;
+    height: 9em;
+    width: 35em;
+    border: 0.1em solid black;
+}
+
+input {
+    outline: none;
+    border: 0.1em solid black;
+    height: 1.3em;
+}
+
+button {
+    cursor: pointer;
+    border: 0.01em solid black;
+    font-size: 0.8em;
+    padding: 0.4em;
+    outline: none;
+    margin-top: 0.1em;
+    background-color: white;
+}
+
+button:active  {
+    outline: none;
+    /* background-color: #339966; */
+    transform: translateY(0.3em);
+    color: white;
+}

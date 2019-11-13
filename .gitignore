@@ -1,0 +1,13 @@
+# node_modules
+
+node_modules
+client/node_modules
+board/node_modules
+
+#dist 
+dist
+
+
+# misc
+.DS_Store
+/.vscode

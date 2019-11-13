@@ -1,0 +1,43 @@
+{
+	"//1": "describes your app and its dependencies",
+	"//2": "https://docs.npmjs.com/files/package.json",
+	"//3": "updating this file will download and update your packages",
+	"name": "anon_message_board",
+	"version": "0.0.1",
+	"description": "What am I about?",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js",
+		"devStart": "nodemon server.js",
+		"test": "node ./node_modules/mocha/bin/mocha"
+	},
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"chai": "^4.2.0",
+		"chai-http": "^4.3.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"express-validator": "^6.2.0",
+		"helmet": "^3.21.2",
+		"mocha": "^3.2.0",
+		"mongodb": "^2.2.16",
+		"mysql": "^2.17.1",
+		"zombie": "^5.0.5"
+	},
+	"engines": {
+		"node": "10.5.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://hyperdev.com/#!/project/welcome-project"
+	},
+	"keywords": [
+		"node",
+		"hyperdev",
+		"express"
+	],
+	"license": "MIT",
+	"devDependencies": {
+		"nodemon": "^1.19.4"
+	}
+}

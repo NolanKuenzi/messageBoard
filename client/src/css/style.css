@@ -1,0 +1,141 @@
+/* General */
+
+body {
+
+}
+
+/* <Header /> component */
+
+#header {
+    text-align: center;
+}
+
+/* <MainPage /> component */
+
+#usrStoriesToggle {
+    margin-top: 3em;
+    border: 0.1em solid black;
+    width: 10em;
+    height: 1em;
+    padding: 0.2em;
+    text-align: center;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#usrStoriesDiv {
+    width: 70em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#usDivSpan {
+    font-size: 0.7em;
+}
+
+#apiTestsToggle {
+    margin-top: 3em;
+    border: 0.1em solid black;
+    width: 10em;
+    height: 1em;
+    padding: 0.2em;
+    text-align: center;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#apiTestsDiv {
+    width: 25em;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* <UserStories /> component */
+
+#tableDiv {
+    margin-left: 1em;
+}
+
+td {
+    width: 10em;
+    border: 0.01em solid black;
+    text-align: center;
+    height: 1em;
+    padding: 0.4em;
+}
+
+.tableHeader {
+    background-color: silver;
+    padding: 0.3em;
+}
+
+.tableSide {
+    background-color: silver;  
+}
+
+#testingLinkDiv {
+    margin-top: 0.5em;
+    margin-left: 1em;
+    font-size: 1.5em;
+}
+
+a {
+    color: blue;
+}
+
+/* <ApiTests /> Component */
+
+.formDiv {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 0.01em solid black;
+}
+
+.headerDiv {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+input {
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    border: 0.01em solid black;
+    height: 1.5em;
+    outline: none;
+    font-size: 0.8em;
+}
+
+textarea {
+    margin-top: 0.3em;
+    border: 0.01em solid black;
+    height: 3em;
+    outline: none;
+    font-size: 0.8em;
+}
+
+button {
+    cursor: pointer;
+    border: 0.01em solid black;
+    font-size: 0.8em;
+    padding: 0.4em;
+    outline: none;
+    margin-top: 0.1em;
+    background-color: white;
+}
+
+button:active  {
+    outline: none;
+    /* background-color: #339966; */
+    transform: translateY(0.3em);
+    color: white;
+}
+
+/* <Footer /> component */
+
+#footerDiv {
+    margin-top: 2em;
+    text-align: center;
+}
