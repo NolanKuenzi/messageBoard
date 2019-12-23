@@ -1,16 +1,11 @@
-/* General */
 
 body {
-
+    background: tan;
 }
-
-/* <Header /> component */
 
 #header {
     text-align: center;
 }
-
-/* <MainPage /> component */
 
 #usrStoriesToggle {
     margin-top: 3em;
@@ -52,8 +47,6 @@ body {
     margin-right: auto;
 }
 
-/* <UserStories /> component */
-
 #tableDiv {
     margin-left: 1em;
 }
@@ -84,8 +77,6 @@ td {
 a {
     color: blue;
 }
-
-/* <ApiTests /> Component */
 
 .formDiv {
     margin-top: 1em;
@@ -128,12 +119,9 @@ button {
 
 button:active  {
     outline: none;
-    /* background-color: #339966; */
     transform: translateY(0.3em);
     color: white;
 }
-
-/* <Footer /> component */
 
 #footerDiv {
     margin-top: 2em;

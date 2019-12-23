@@ -1,0 +1,74 @@
+body {
+    background: tan;
+}
+
+h1 {
+    text-align: center;
+}
+
+.idSpan {
+    font-size: 0.7em;  
+}
+
+button {
+    cursor: pointer;
+    border: 0.01em solid black;
+    font-size: 0.7em;
+    padding: 0.4em;
+    outline: none;
+    margin-top: 0.1em;
+    background-color: white;
+}
+
+button:active  {
+    outline: none;
+    background-color: black;
+    transform: translateY(0.3em);
+    color: white;
+}
+
+input {
+    margin: 0.1em 0.1em 0.1em 0em;
+    outline: none;
+    border: 0.1em solid black;
+    height: 1.7em;
+}
+
+#threadBody {
+    border: 0.1em solid black;
+    width: 55em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+#threadData {
+    margin: 0em 1em 1em 0em;
+}
+
+#threadForm {
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0em;
+}
+
+li {
+    margin: 0.3em 0em 0.3em 3em;
+    padding: 0.3em;
+    width: 35em;
+    border: 0.01em dotted black;
+}
+
+#quickReplyData {
+    margin-left: 3em;
+}
+
+textarea {
+    width: 30em;
+    height: 6em;
+    border: 0.01em solid black;
+}

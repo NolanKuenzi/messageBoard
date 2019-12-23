@@ -28,40 +28,136 @@ const ApiTests = () => {
   const [deleteReplyId, setDeleteReplyId] = useState('');
   const [deleteReplyPass, setDeleteReplyPass] = useState('');
 
-  const newThread = e => {
+  const newThread = async e => {
     e.preventDefault();
     if (newThreadBoard === '' || newThreadText === '' || newThreadDelete === '') {
       alert('Please fill out required fields');
       return;
     }
     try {
-      const req = axios.post(`http://localhost:3000/api/threads/${newThreadBoard}`, {
-        threadText: newThreadText,
-        delPass: newThreadDelete,
+      await axios.post(`http://localhost:3000/api/threads/${newThreadBoard}`, {
+        text: newThreadText,
+        pass: newThreadDelete,
       });
       setNewThreadBoard('');
       setNewThreadText('');
       setNewThreadDelete('');
+      return;
+      // window.location = 'http://localhost:8081';
+      // window.location = 'https://url/b/${req.params.board}
     } catch (error) {
-      console.log(error);
+      if (error.response !== undefined && error.response.data.error !== undefined) {
+        alert(error.response.data.error);
+      } else {
+        alert(error);
+      }
     }
   };
-  const reportThread = e => {
+  const reportThread = async e => {
     e.preventDefault();
+    try {
+      const response = await axios.put(`http://localhost:3000/api/threads/${reportThreadBoard}`, {
+        id: reportThreadId,
+      });
+      setReportThreadBoard('');
+      setReportThreadId('');
+      alert(response.data.msg);
+    } catch (error) {
+      if (error.response !== undefined && error.response.data.error !== undefined) {
+        alert(`Error: ${error.response.data.error}`);
+      } else {
+        alert(error);
+      }
+    }
   };
-  const deleteThread = e => {
+  const deleteThread = async e => {
     e.preventDefault();
+    try {
+      const response = await axios.delete(
+        `http://localhost:3000/api/threads/${deleteThreadBoard}`,
+        {
+          data: {
+            id: deleteThreadId,
+            pass: deleteThreadPass,
+          },
+        }
+      );
+      setDeleteThreadBoard('');
+      setDeleteThreadId('');
+      setDeleteThreadPass('');
+      alert(response.data.msg);
+    } catch (error) {
+      if (error.response !== undefined && error.response.data.error !== undefined) {
+        alert(`Error: ${error.response.data.error}`);
+      } else {
+        alert(error);
+      }
+    }
   };
-  const newReply = e => {
+  const newReply = async e => {
     e.preventDefault();
+    try {
+      await axios.post(`http://localhost:3000/api/replies/${newReplyBoard}`, {
+        threadId: newReplyId,
+        text: newReplyText,
+        pass: newReplyPass,
+      });
+      setNewReplyBoard('');
+      setNewReplyId('');
+      setNewReplyText('');
+      setNewReplyPass('');
+      // window.location = 'http://localhost:8081';
+      // window.location = 'https://url/b/${req.params.board}
+    } catch (error) {
+      if (error.response !== undefined && error.response.data.error !== undefined) {
+        alert(`Error: ${error.response.data.error}`);
+      } else {
+        alert(error);
+      }
+    }
   };
-  const reportReply = e => {
+  const reportReply = async e => {
     e.preventDefault();
+    try {
+      const response = await axios.put(`http://localhost:3000/api/replies/${reportReplyBoard}`, {
+        threadId: reportReplyThreadId,
+        reportId: reportReplyId,
+      });
+      setReportReplyBoard('');
+      setDeleteReplyId('');
+      setReportReplyId('');
+      alert(response.data.msg);
+    } catch (error) {
+      if (error.response !== undefined && error.response.data.error !== undefined) {
+        alert(`Error: ${error.response.data.error}`);
+      } else {
+        alert(error);
+      }
+    }
   };
-  const deleteReply = e => {
+  const deleteReply = async e => {
     e.preventDefault();
+    try {
+      const response = await axios.delete(`http://localhost:3000/api/replies/${deleteReplyBoard}`, {
+        data: {
+          threadId: deleteReplyThreadId,
+          replyId: deleteReplyId,
+          pass: deleteReplyPass,
+        },
+      });
+      setDeleteReplyBoard('');
+      setDeleteReplyThreadId('');
+      setDeleteReplyId('');
+      setDeleteReplyPass('');
+      alert(response.data.msg);
+    } catch (error) {
+      if (error.response !== undefined && error.response.data.error !== undefined) {
+        alert(`Error: ${error.response.data.error}`);
+      } else {
+        alert(error);
+      }
+    }
   };
-
   return (
     <div>
       <div className="formDiv">
@@ -248,5 +344,4 @@ const ApiTests = () => {
     </div>
   );
 };
-
 export default ApiTests;

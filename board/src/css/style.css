@@ -1,16 +1,14 @@
-/* General */
 
 body {
+    background: tan;
 
 }
-
-/* <board /> component */
 
 h2 {
     text-align: center;
 }
 
-#boardSection {
+#newThread {
     margin-top: 3em;
     width: 25em;
     margin-left: auto;
@@ -26,19 +24,24 @@ h2 {
     outline: none;
     height: 9em;
     width: 35em;
-    border: 0.1em solid black;
+    border: 0.01em solid black;
+}
+
+#submitBtn0 {
+    margin-top: 0.2em;
 }
 
 input {
     outline: none;
     border: 0.1em solid black;
-    height: 1.3em;
+    height: 1.6em;
+    margin-right: 0.2em;  
 }
 
 button {
     cursor: pointer;
     border: 0.01em solid black;
-    font-size: 0.8em;
+    font-size: 0.7em;
     padding: 0.4em;
     outline: none;
     margin-top: 0.1em;
@@ -47,7 +50,73 @@ button {
 
 button:active  {
     outline: none;
-    /* background-color: #339966; */
+    background-color: black;
     transform: translateY(0.3em);
     color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.threadsLi {
+    padding: 1em;
+    border: 0.01em solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em;
+    width: 55em;
+}
+
+.TextSpan {
+    font-size: 1.1em;
+}
+
+.idSpan {
+    font-size: 0.70em;
+}
+
+.threadsTopDiv {
+    margin-bottom: 1em;
+}
+
+.topFormInput {
+    margin-bottom: 0.5em;
+}
+
+.repliesDiv {
+    margin-bottom: 0.5em;
+    margin-left: 3em;
+}
+
+.threadDivLink {
+    font-size: 0.8em;
+}
+
+.replyLi {
+    border: 0.01em dotted black;
+    margin-top: 0.3em;
+    padding: 0.5em;
+    margin-left: -3em;
+    width: 35em;
+}
+
+.replyLiInput {
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: blue;
+}
+
+.submitReplyDiv {
+    margin-left: 2.5em;
+}
+
+.threadForm1TxtArea {
+    margin-top: 0.5em;
+    border: 0.1em solid black;
+    height: 6em;
+    width: 30em;
+    outline: none;
 }

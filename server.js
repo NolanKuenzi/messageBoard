@@ -30,7 +30,7 @@ app.route('/b/:board/')
   .get(function (req, res) {
     res.sendFile(process.cwd() + '/views/board.html');
   });
-app.route('/b/:board/:threadid')
+app.route('/b/:board/:threadid/')
   .get(function (req, res) {
     res.sendFile(process.cwd() + '/views/thread.html');
   });
