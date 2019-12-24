@@ -67,22 +67,22 @@ module.exports = function (app) {
 
 /*
   pool.query('DROP TABLE t0');
-  return; 
+  //return; 
 */
-
 /*
    pool.query('SELECT * FROM t0')
    .then(dta => {
      console.log(dta[0]);
      return;
    }); 
-   return;
+  return;
+
+  console.log(dta);
+  return;
 */
 
     pool.query('SHOW TABLES')
       .then(dta => {
-        console.log(dta);
-        //return;
         const postHandler = new PostHandler();
         for (let i = 0; i < dta[0].length; i++) {
           if (req.params.board === dta[0][i].Tables_in_heroku_86c840b95eb22c2) {

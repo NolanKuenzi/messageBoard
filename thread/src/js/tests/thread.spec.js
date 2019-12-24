@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent, waitForDomChange } from '@testing-library/react';
+import { render, cleanup, waitForDomChange } from '@testing-library/react';
 import regeneratorRuntime, { async } from 'regenerator-runtime';
 import axiosMock from 'axios';
 import Thread from '../components/container/thread';
@@ -49,7 +49,7 @@ describe('<Thread /> component', () => {
     });
     const { container } = render(<Thread />);
     await waitForDomChange();
-    const threadDiv = container.querySelector('[id="threadDiv"]');
+    const threadDiv = container.querySelector('[id="threadBody"]');
     expect(threadDiv.textContent).toContain('Thread0');
     expect(threadDiv.textContent).toContain('Reply0');
     expect(threadDiv.textContent).toContain('Reply1');
