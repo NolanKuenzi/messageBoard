@@ -39,6 +39,9 @@ const ApiTests = () => {
         text: newThreadText,
         pass: newThreadDelete,
       });
+      setNewThreadBoard('');
+      setNewThreadText('');
+      setNewThreadDelete('');
       window.location = `https://shielded-coast-12579.herokuapp.com/b/${newThreadBoard}`;
     } catch (error) {
       if (error.response !== undefined && error.response.data.error !== undefined) {
@@ -100,6 +103,10 @@ const ApiTests = () => {
         text: newReplyText,
         pass: newReplyPass,
       });
+      setNewReplyBoard('');
+      setNewReplyId('');
+      setNewReplyText('');
+      setNewReplyPass('');
       window.location = `https://shielded-coast-12579.herokuapp.com/b/${newReplyBoard}`;
     } catch (error) {
       if (error.response !== undefined && error.response.data.error !== undefined) {
@@ -120,7 +127,7 @@ const ApiTests = () => {
         }
       );
       setReportReplyBoard('');
-      setDeleteReplyId('');
+      setReportReplyThreadId('');
       setReportReplyId('');
       alert(response.data.msg);
     } catch (error) {
