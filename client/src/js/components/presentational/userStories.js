@@ -101,7 +101,7 @@ const UserStories = () => (
     </div>
     <div id="testingLinkDiv">
       <span>
-        <a href="">
+        <a href="https://shielded-coast-12579.herokuapp.com/b/general">
           Go to testing <i>'/b/general/'</i> board
         </a>
       </span>

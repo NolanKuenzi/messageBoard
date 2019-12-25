@@ -8,6 +8,7 @@ dist
 # misc
 .DS_Store
 /.vscode
+notes.js
 
 #.env
 .env

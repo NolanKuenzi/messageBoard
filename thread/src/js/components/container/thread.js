@@ -8,7 +8,9 @@ const Thread = () => {
   const [boardName, setBoardName] = useState('');
   const getThreadInfo = async () => {
     try {
-      const request = await axios.get(`http://localhost:3000/api/replies/${threadUrl}`);
+      const request = await axios.get(
+        `https://shielded-coast-12579.herokuapp.com/api/replies/${threadUrl}`
+      );
       setThreadDta(request.data.data.slice(0));
       if (request.data.data.length !== 0) {
         setBoardName(request.data.data[0].board);
@@ -24,9 +26,12 @@ const Thread = () => {
   const reportThread = async (e, id) => {
     e.preventDefault();
     try {
-      const request = await axios.put(`http://localhost:3000/api/threads/${boardName}`, {
-        id,
-      });
+      const request = await axios.put(
+        `https://shielded-coast-12579.herokuapp.com/api/threads/${boardName}`,
+        {
+          id,
+        }
+      );
       alert(request.data.msg);
     } catch (error) {
       if (error.response !== undefined && error.response.data.error !== undefined) {
@@ -43,7 +48,7 @@ const Thread = () => {
       return;
     }
     try {
-      await axios.delete(`http://localhost:3000/api/threads/${boardName}`, {
+      await axios.delete(`https://shielded-coast-12579.herokuapp.com/api/threads/${boardName}`, {
         data: {
           id,
           pass: e.target.thrdDelInput.value,
@@ -61,10 +66,13 @@ const Thread = () => {
   const reportReply = async (e, thrdId, rplyId) => {
     e.preventDefault();
     try {
-      const request = await axios.put(`http://localhost:3000/api/replies/${boardName}`, {
-        threadId: thrdId,
-        reportId: rplyId,
-      });
+      const request = await axios.put(
+        `https://shielded-coast-12579.herokuapp.com/api/replies/${boardName}`,
+        {
+          threadId: thrdId,
+          reportId: rplyId,
+        }
+      );
       alert(request.data.msg);
     } catch (error) {
       if (error.response !== undefined && error.response.data.error !== undefined) {
@@ -81,7 +89,7 @@ const Thread = () => {
       return;
     }
     try {
-      await axios.delete(`http://localhost:3000/api/replies/${boardName}`, {
+      await axios.delete(`https://shielded-coast-12579.herokuapp.com/api/replies/${boardName}`, {
         data: {
           threadId: thrdId,
           replyId: rplyId,
@@ -105,7 +113,7 @@ const Thread = () => {
       return;
     }
     try {
-      await axios.post(`http://localhost:3000/api/replies/${boardName}`, {
+      await axios.post(`https://shielded-coast-12579.herokuapp.com/api/replies/${boardName}`, {
         threadId: id,
         text: e.target.subReplyTxt.value,
         pass: e.target.subReplyPass.value,

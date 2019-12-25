@@ -1,7 +1,6 @@
 //Complete the API routing below
 'use strict';
 
-//const expect = require('chai').expect;
 const { param, body, sanitizeParam, sanitizeBody, validationResult } = require('express-validator');
 const mysql = require('mysql2/promise');
 require('dotenv').config();
@@ -64,23 +63,6 @@ module.exports = function (app) {
         res.status(400).json({error: errors.array()[0].msg});
         return;
       }
-
-/*
-  pool.query('DROP TABLE t0');
-  //return; 
-*/
-/*
-   pool.query('SELECT * FROM t0')
-   .then(dta => {
-     console.log(dta[0]);
-     return;
-   }); 
-  return;
-
-  console.log(dta);
-  return;
-*/
-
     pool.query('SHOW TABLES')
       .then(dta => {
         const postHandler = new PostHandler();

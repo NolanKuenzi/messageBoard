@@ -35,16 +35,11 @@ const ApiTests = () => {
       return;
     }
     try {
-      await axios.post(`http://localhost:3000/api/threads/${newThreadBoard}`, {
+      await axios.post(`https://shielded-coast-12579.herokuapp.com/api/threads/${newThreadBoard}`, {
         text: newThreadText,
         pass: newThreadDelete,
       });
-      setNewThreadBoard('');
-      setNewThreadText('');
-      setNewThreadDelete('');
-      return;
-      // window.location = 'http://localhost:8081';
-      // window.location = 'https://url/b/${req.params.board}
+      window.location = `https://shielded-coast-12579.herokuapp.com/b/${newThreadBoard}`;
     } catch (error) {
       if (error.response !== undefined && error.response.data.error !== undefined) {
         alert(error.response.data.error);
@@ -56,9 +51,12 @@ const ApiTests = () => {
   const reportThread = async e => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:3000/api/threads/${reportThreadBoard}`, {
-        id: reportThreadId,
-      });
+      const response = await axios.put(
+        `https://shielded-coast-12579.herokuapp.com/api/threads/${reportThreadBoard}`,
+        {
+          id: reportThreadId,
+        }
+      );
       setReportThreadBoard('');
       setReportThreadId('');
       alert(response.data.msg);
@@ -74,7 +72,7 @@ const ApiTests = () => {
     e.preventDefault();
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/threads/${deleteThreadBoard}`,
+        `https://shielded-coast-12579.herokuapp.com/api/threads/${deleteThreadBoard}`,
         {
           data: {
             id: deleteThreadId,
@@ -97,17 +95,12 @@ const ApiTests = () => {
   const newReply = async e => {
     e.preventDefault();
     try {
-      await axios.post(`http://localhost:3000/api/replies/${newReplyBoard}`, {
+      await axios.post(`https://shielded-coast-12579.herokuapp.com/api/replies/${newReplyBoard}`, {
         threadId: newReplyId,
         text: newReplyText,
         pass: newReplyPass,
       });
-      setNewReplyBoard('');
-      setNewReplyId('');
-      setNewReplyText('');
-      setNewReplyPass('');
-      // window.location = 'http://localhost:8081';
-      // window.location = 'https://url/b/${req.params.board}
+      window.location = `https://shielded-coast-12579.herokuapp.com/b/${newReplyBoard}`;
     } catch (error) {
       if (error.response !== undefined && error.response.data.error !== undefined) {
         alert(`Error: ${error.response.data.error}`);
@@ -119,10 +112,13 @@ const ApiTests = () => {
   const reportReply = async e => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:3000/api/replies/${reportReplyBoard}`, {
-        threadId: reportReplyThreadId,
-        reportId: reportReplyId,
-      });
+      const response = await axios.put(
+        `https://shielded-coast-12579.herokuapp.com/api/replies/${reportReplyBoard}`,
+        {
+          threadId: reportReplyThreadId,
+          reportId: reportReplyId,
+        }
+      );
       setReportReplyBoard('');
       setDeleteReplyId('');
       setReportReplyId('');
@@ -138,13 +134,16 @@ const ApiTests = () => {
   const deleteReply = async e => {
     e.preventDefault();
     try {
-      const response = await axios.delete(`http://localhost:3000/api/replies/${deleteReplyBoard}`, {
-        data: {
-          threadId: deleteReplyThreadId,
-          replyId: deleteReplyId,
-          pass: deleteReplyPass,
-        },
-      });
+      const response = await axios.delete(
+        `https://shielded-coast-12579.herokuapp.com/api/replies/${deleteReplyBoard}`,
+        {
+          data: {
+            threadId: deleteReplyThreadId,
+            replyId: deleteReplyId,
+            pass: deleteReplyPass,
+          },
+        }
+      );
       setDeleteReplyBoard('');
       setDeleteReplyThreadId('');
       setDeleteReplyId('');
