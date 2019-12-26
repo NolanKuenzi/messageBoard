@@ -214,7 +214,9 @@ const Board = () => {
                     {item.TotalReplies} replies total (
                     {item.TotalReplies < 3 ? 0 : item.TotalReplies - 3} hidden)-{' '}
                     <a
-                      href={`https://shielded-coast-12579.herokuapp.com/b/${boardName}/${item._id}`}
+                      href={`https://shielded-coast-12579.herokuapp.com/b/${boardName}${
+                        boardName.charAt(boardName.length - 1) !== '/' ? '/' : ''
+                      }${item._id}`}
                     >
                       See the full thread here.
                     </a>
