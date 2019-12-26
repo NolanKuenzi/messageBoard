@@ -155,7 +155,7 @@ const Board = () => {
   return (
     <div id="boardDiv">
       <h2>
-        <b>Welcome to /b/{boardName}/</b>
+        <b>Welcome to /b/{boardName}</b>
       </h2>
       <div id="newThread">
         <span id="boardSecHeader">
