@@ -49,7 +49,7 @@ describe('<Thread /> component', () => {
     });
     const { container } = render(<Thread />);
     await waitForDomChange();
-    const threadDiv = container.querySelector('[id="threadBody"]');
+    const threadDiv = container.querySelector('[id="threadDiv"]');
     expect(threadDiv.textContent).toContain('Thread0');
     expect(threadDiv.textContent).toContain('Reply0');
     expect(threadDiv.textContent).toContain('Reply1');

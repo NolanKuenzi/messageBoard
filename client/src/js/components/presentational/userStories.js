@@ -12,16 +12,15 @@ const UserStories = () => (
           I can <b>POST</b> a thread to a specific message board by passing form data text and
           delete_password to <i>/api/threads/{'{board}'}</i>.(Recomend res.redirect to board page
           /b/
-          {'{board}'}) Saved will be _id, text, created_on(date{'&'}time), bumped_on(date{'&'}time,
-          starts same as created_on), reported(boolean), delete_password, {'&'} replies(array).
+          {'{board}'}) Saved will be _id, text, created_on(date&time), bumped_on(date&time, starts
+          same as created_on), reported(boolean), delete_password, & replies(array).
         </li>
         <li>
-          an <b>POST</b> a reply to a thead on a specific board by passing form data text,
-          delete_password,
-          {'&'} thread_id to <i>/api/replies/{'{board}'}</i> and it will also update the bumped_on
-          date to the comments date.(Recomend res.redirect to thread page /b/{'{board}'}/
-          {'{thread_id}'}) In the thread's 'replies' array will be saved _id, text, created_on,
-          delete_password, {'&'} reported.
+          I can <b>POST</b> a reply to a thead on a specific board by passing form data text,
+          delete_password, & thread_id to <i>/api/replies/{'{board}'}</i> and it will also update
+          the bumped_on date to the comments date.(Recomend res.redirect to thread page /b/
+          {'{board}'}/{'{thread_id}'}) In the thread's 'replies' array will be saved _id, text,
+          created_on, delete_password, & reported.
         </li>
         <li>
           I can <b>GET</b> an array of the most recent 10 bumped threads on the board with only the
@@ -37,7 +36,7 @@ const UserStories = () => (
         </li>
         <li>
           I can delete a thread completely if I send a DELETE request to{' '}
-          <i>/api/threads/{'{board}'}</i> and pass along the thread_id {'&'} delete_password. (Text
+          <i>/api/threads/{'{board}'}</i> and pass along the thread_id & delete_password. (Text
           response will be 'incorrect password' or 'success')
         </li>
         <li>
