@@ -20,7 +20,7 @@ describe('<Thread /> component', () => {
             ThreadId: 'GAhm56Qripf7CBeTw6x3DLhT6',
             Type: 'Thread',
             board: 't0',
-            Replies: [
+            replies: [
               {
                 _id: 'ui3ripf7asdfCBeTw6x3DLhT6',
                 CreatedOn: '2019-11-21T07:17:32.453Z',
@@ -48,8 +48,8 @@ describe('<Thread /> component', () => {
       },
     });
     const { container } = render(<Thread />);
-    await waitForDomChange();
     const threadDiv = container.querySelector('[id="threadDiv"]');
+    await waitForDomChange();
     expect(threadDiv.textContent).toContain('Thread0');
     expect(threadDiv.textContent).toContain('Reply0');
     expect(threadDiv.textContent).toContain('Reply1');
